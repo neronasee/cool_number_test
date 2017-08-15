@@ -33,12 +33,12 @@ for (let i = 1; i <= 100; i++) {
   })
 }
 
-const getCode = (cb) => {
-  async.parallel(tasks, function (err, res) {
-    if (err) return console.log(err);
+const getCode = () => new Promise((resolve, reject) => {
+   async.parallel(tasks, function (err, res) {
+    if (err) reject(err);
 
-    cb(res.filter(el => !!el).join(''));
+    resolve(res.filter(el => !!el).join(''))
   })
-}
+});
 
 module.exports = getCode;

@@ -1,5 +1,5 @@
 const getCode = require('./getCode');
 
-getCode(res => {
-  console.log(res);
-})
+getCode()
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
