@@ -42,3 +42,4 @@ const getCode = () => new Promise((resolve, reject) => {
 });
 
 module.exports = getCode;
+
